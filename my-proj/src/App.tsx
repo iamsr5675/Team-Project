@@ -1,9 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./App.css";
-import { Box } from "@mui/material";
+import { CssBaseline } from "@mui/material";
+import SignUp from "./pages/registration/sign-up";
 
 function App() {
-  return <Box>Hello</Box>;
+  return (
+    <>
+      <CssBaseline />
+      <Fragment>
+        <SignUp />
+      </Fragment>
+    </>
+  );
 }
 
 export default App;
