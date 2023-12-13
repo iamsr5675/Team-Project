@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { Box, Typography, TextField, Button, Avatar } from "@mui/material";
 import Background from "../../assets/images/liquid-cheese.png";
+import { stringAvatar } from "../../utils";
 
-const SignUp = () => {
+const Login = () => {
   const [formData, setFormData] = useState<any>({
-    firstname: "",
-    lastname: "",
     email: "",
     password: "",
   });
@@ -47,31 +46,17 @@ const SignUp = () => {
           width: "25vw",
         }}
       >
+        <Avatar
+          {...stringAvatar(formData.email.toUpperCase())}
+          sx={{ width: 56, height: 56, mb: 1 }}
+        />
         <Typography
           variant="h4"
           gutterBottom
           sx={{ fontSize: "36px", fontWeight: "600" }}
         >
-          Sign Up
+          Login
         </Typography>
-        <TextField
-          label="Firstname"
-          type="text"
-          name="firstname"
-          value={formData.firstname || ""}
-          onChange={handleChange}
-          margin="normal"
-          required
-        />
-        <TextField
-          label="Lastname"
-          type="text"
-          name="lastname"
-          value={formData.lastname || ""}
-          onChange={handleChange}
-          margin="normal"
-          required
-        />
         <TextField
           label="Email"
           type="email"
@@ -96,11 +81,11 @@ const SignUp = () => {
           color="primary"
           sx={{ marginTop: "10px" }}
         >
-          Sign Up
+          Sign In
         </Button>
       </Box>
     </Box>
   );
 };
 
-export default SignUp;
+export default Login;
