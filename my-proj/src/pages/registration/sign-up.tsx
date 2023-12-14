@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { Box, Typography, TextField, Button, Avatar } from "@mui/material";
 import Background from "../../assets/images/liquid-cheese.png";
+import { stringAvatar } from "../../utils";
 
 const SignUp = () => {
   const [formData, setFormData] = useState<any>({
@@ -47,6 +48,10 @@ const SignUp = () => {
           width: "25vw",
         }}
       >
+        <Avatar
+          {...stringAvatar(formData.firstname.toUpperCase())}
+          sx={{ width: 56, height: 56, mb: 1 }}
+        />
         <Typography
           variant="h4"
           gutterBottom
@@ -95,6 +100,7 @@ const SignUp = () => {
           variant="contained"
           color="primary"
           sx={{ marginTop: "10px" }}
+          size="large"
         >
           Sign Up
         </Button>
